@@ -7,6 +7,9 @@ def hangman (word):
     print("Guess the word letter by letter.")
 
     while guesses != 0:
+        display_word = " ".join([letter if letter in guessed_letters else "_" for letter in word])
+        print("Current word:", display_word)
+
         guess = input("Guess a letter: ").upper()
 
         if not guess.isalpha() or len(guess) != 1:
